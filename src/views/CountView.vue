@@ -1,28 +1,33 @@
 <script lang="ts">
-import { defineComponent, nextTick } from "vue";
+  import { defineComponent, nextTick } from "vue";
 
-export default defineComponent({
-  data() {
-    return {
-      count: 1,
-    };
-  },
-  methods: {
-    increment() {
-      this.count++;
+  export default defineComponent({
+    data() {
+      return {
+        count: 1,
+      };
     },
-  },
+    methods: {
+      increment() {
+        this.count++;
+      },
+    },
 
-  mounted() {
-    this.count = 2;
-  },
+    // chay khi component duoc mount
+    mounted() {
+      console.log(this.count)
+      this.count = 2;
+      console.log(this.count)
+    },
 
-  computed: {
-    log() {
-        console.log('log',this.count);
-    } 
-  },
-});
+
+    // chay khi component re-render
+    computed: {
+      log() {
+          console.log('log',this.count);
+      } 
+    },
+  });
 </script>
 
 <template>
